@@ -1,0 +1,16 @@
+//Expected Forecast Table mobile
+
+@media only screen
+and (min-device-width: 428px)
+and (max-device-width: 926px) 
+and (-webkit-min-device-pixel-ratio: 3) {
+
+    .day-forecast-table {
+        margin-bottom: 10px;
+        width: 100%;
+        height: 14vh;
+        border: 0.5px solid;
+        border-radius: 15px;
+        border-color: rgba(0, 0, 0, 0.3);    
+    }
+}

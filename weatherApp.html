@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css" />
+    <script type="module" src="./Javascript/main.js"></script>
+    
+    <title>Weather</title>
+</head>
+<body>
+
+    <header>
+        <div class="hero">
+           <h3 class="hero-display city-name"></h3>
+            <h1 class="hero-display temperature"></h1>
+           <h4 class="hero-display weather-status"></h4>
+           <h5 class="hero-display temp-parameters"></h5>
+        </div>
+    </header>
+
+    <main>
+        <section class="day-temps"> <!-- seccion sonde se mostraran las temperaturas alrededor del dia -->
+            <div class="day-forecast-table">
+            <div class="temps-by-hour"></div> <!-- la division donde se listan las temperaturas pronosticadas del dia por hora -->
+        </div>
+        </section>
+
+        <section class="temps-by-day"> <!-- division donde se mostraran temperaturas por dia de la semana -->
+            <div class="seven-day-table">
+
+            <div class="today days"></div>
+            <div class="row-border first-line"></div>
+
+            <div class="day2 days"></div>
+            <div class="row-border second-line"></div>
+
+            <div class="day3 days"></div>
+            <div class="row-border third-line"></div>
+
+            <div class="day4 days"></div>
+            <div class="row-border fourth-line"></div>
+
+            <div class="day5 days"></div>
+            <div class="row-border fifth-line"></div>
+            
+            <div class="day6 days"> </div>
+            <div class="row-border sixth-line"></div>
+
+            <div class="day7 days"> </div>
+
+        </div>
+        </section>
+    </main>
+
+</body>
+</html>

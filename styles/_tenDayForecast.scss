@@ -1,0 +1,48 @@
+//Ten Day Forecast table
+
+//Mobile
+
+@media only screen
+and (min-device-width: 428px)
+and (max-device-width: 926px) 
+and (-webkit-min-device-pixel-ratio: 3) {
+
+    html {
+        overflow: scroll;
+    }
+    
+    .seven-day-table {
+        display: grid;
+        row-gap: 30px;;
+        width: 100%;
+        height: 100%;
+        border: 0.1px solid;
+        border-radius: 15px;
+        border-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .days {
+        width: 100%;
+        height: 150px;
+        align-self: center;
+    }
+
+    .today {
+        margin-top: 30px;
+    }
+
+    .day7 {
+        margin-bottom: 30px;
+    }
+
+    .row-border {
+        width: 100%;
+        height: 0px;;
+        border: 0.1px solid;
+        opacity: 10%;
+        align-self: center; 
+        padding: 0px;
+        margin: 0px;
+        background-color: black;
+    }
+}

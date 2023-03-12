@@ -1,0 +1,67 @@
+@media only screen and (min-device-width: 428px) and (max-device-width: 926px) and (-webkit-min-device-pixel-ratio: 3) {
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, auto);
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    border: 1px solid;
+    border-radius: 15px;
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+  .hero .hero-display {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-device-width: 428px) and (max-device-width: 926px) and (-webkit-min-device-pixel-ratio: 3) {
+  .day-forecast-table {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 14vh;
+    border: 0.5px solid;
+    border-radius: 15px;
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+}
+@media only screen and (min-device-width: 428px) and (max-device-width: 926px) and (-webkit-min-device-pixel-ratio: 3) {
+  html {
+    overflow: scroll;
+  }
+  .seven-day-table {
+    display: grid;
+    row-gap: 30px;
+    width: 100%;
+    height: 100%;
+    border: 0.1px solid;
+    border-radius: 15px;
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+  .days {
+    width: 100%;
+    height: 150px;
+    align-self: center;
+  }
+  .today {
+    margin-top: 30px;
+  }
+  .day7 {
+    margin-bottom: 30px;
+  }
+  .row-border {
+    width: 100%;
+    height: 0px;
+    border: 0.1px solid;
+    opacity: 10%;
+    align-self: center;
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+  }
+}/*# sourceMappingURL=general.css.map */

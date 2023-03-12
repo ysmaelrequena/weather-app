@@ -1,0 +1,7 @@
+@media only screen and (min-device-width: 428px) and (max-device-width: 926px) and (-webkit-min-device-pixel-ratio: 3) {
+  .day-forecast-table {
+    margin-bottom: 30%;
+    width: 100%;
+    height: 30vh;
+  }
+}/*# sourceMappingURL=expectedForecast.css.map */
