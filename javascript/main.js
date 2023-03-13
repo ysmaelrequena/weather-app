@@ -1,5 +1,6 @@
-import { weatherCodeObject } from './weathercodeobject.js'
-import { getWeather } from './defaultweather.js'
+import { weatherCodeObject } from './weathercodeobject.js';
+import { getWeather } from './defaultweather.js';
+import { getCity } from './defaultweather.js';
 
 
 // Prints the header's climate information: 
@@ -7,43 +8,46 @@ import { getWeather } from './defaultweather.js'
 const temperatureDisplay = document.querySelector(".temperature");
 const weatherStatus =  document.querySelector(".weather-status");
 const tempParameters =  document.querySelector(".temp-parameters");
+const CityNameDisplay = document.querySelector(".city-name");
+
 
 //Header current temp display
-
-    async function displayWeatherData() {
-        
-    }
-    const displayCurrentWeather = async () => {
-         const { currentWeather } = await getWeather();
+    
+    const displayCurrentWeather = (currentWeather) => {
          const displayedTemp = temperatureDisplay.append(`${Math.round(currentWeather.temperature)}°F`);
          return displayedTemp;
     }
 
-    displayCurrentWeather();
-  
-
    //Header weather status
-   console.log(weatherCodeObject)
-   
-   const weathercodeDisplay = async () => {
-    const { weatherCode } = await getWeather();
+   const weathercodeDisplay = (weatherCode) => {
     const weatherStatusCode = weatherCodeObject.find(x => x.code === weatherCode)
     const display = weatherStatus.append(weatherStatusCode.label);
     return display;
    };
    
-   weathercodeDisplay();
-
+   
 //header min-max temp of the day display
-const displayTempParameters = async () => {
-    //await displayCurrentWeather()
-    const { dailyMaxTemp, dailyMinTemp } = await getWeather()
-    tempParameters.append(`L: ${Math.round(dailyMinTemp)}°F H: ${Math.round(dailyMaxTemp)}°F`)
+const displayTempParameters = (dailyMaxTemp, dailyMinTemp) => {
+    const display = tempParameters.append(`L: ${Math.round(dailyMinTemp)}°F H: ${Math.round(dailyMaxTemp)}°F`);
+    return display;
 }
 
-displayTempParameters();
-   
+
+function displayCityNameSetup(data) {
+    const displayName =  CityNameDisplay.append(data);
+    return displayName;
+}
 
 
+async function displayAllWeather() {
+    const { currentWeather, weatherCode, dailyMaxTemp, dailyMinTemp } = await getWeather();
+    const { cityData } = await getCity();
+    displayCurrentWeather(currentWeather);
+    weathercodeDisplay(weatherCode);
+    displayTempParameters(dailyMaxTemp, dailyMinTemp);
+    displayCityNameSetup(cityData);
+}
+
+displayAllWeather();
 
 
