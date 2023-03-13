@@ -1,6 +1,6 @@
 import { weatherCodeObject } from './weathercodeobject.js';
-import { getWeather } from './defaultweather.js';
-import { getCity } from './defaultweather.js';
+import { getWeather } from './defaultweatherinfo.js';
+import { getCity } from './defaultweatherinfo.js';
 
 
 // Prints the header's climate information: 
@@ -33,19 +33,27 @@ const displayTempParameters = (dailyMaxTemp, dailyMinTemp) => {
 }
 
 
-function displayCityNameSetup(data) {
-    const displayName =  CityNameDisplay.append(data);
+function displayCityNameSetup(name) {
+    const displayName = CityNameDisplay.append(name);
     return displayName;
 }
 
-
 async function displayAllWeather() {
-    const { currentWeather, weatherCode, dailyMaxTemp, dailyMinTemp } = await getWeather();
+    
+    try {
+
     const { cityData } = await getCity();
+    displayCityNameSetup(cityData);
+    console.log(cityData)
+
+    const { currentWeather, weatherCode, dailyMaxTemp, dailyMinTemp } = await getWeather();
     displayCurrentWeather(currentWeather);
     weathercodeDisplay(weatherCode);
     displayTempParameters(dailyMaxTemp, dailyMinTemp);
-    displayCityNameSetup(cityData);
+    
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 displayAllWeather();

@@ -24,6 +24,7 @@ export async function getWeather() {
 
       }
 
+      
       return weatherData;
     } catch (error) {
       return {
@@ -38,6 +39,7 @@ export async function getWeather() {
     }
   }
 
+  
   export async function getCity() {
     
       const success = await new Promise((resolve, reject) => {
@@ -52,12 +54,11 @@ export async function getWeather() {
       const res = await fetch(urlReverse);
       const datos = await res.json();
 
-       let cityData = datos.data[0].locality;
-
-     
+       const cityData = datos.data[0].locality;
 
       return cityData;
 }
+
 
 
 
