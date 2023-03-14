@@ -94,6 +94,14 @@ export const weatherCodeObject = [
     {
         code: 95,
         label: 'Thunderstorm'
+    }, 
+    {
+        code: 96,
+        label: 'Thunderstorm, slight hail'
+    },
+    {
+        code: 99,
+        label: 'Thunderstorm, heavy hail'
     }
 
 ];

@@ -14,16 +14,18 @@ export async function getWeather() {
       const data = await res.json();
 
       const weatherData = {
-      
+
         currentWeather: data.current_weather,
         dailyMaxTemp: Math.max(parseFloat(data.daily.temperature_2m_max)),
         dailyMinTemp: Math.max(parseFloat(data.daily.temperature_2m_min)),
         tempUnit: data.daily_unit,
         hourlyUnits: data.hourly_units,
-        weatherCode: data.current_weather.weathercode
+        weatherCode: data.current_weather.weathercode,
+        hourlyTemps: data.hourly
 
       }
 
+      console.log(weatherData)
       
       return weatherData;
     } catch (error) {
@@ -56,6 +58,7 @@ export async function getWeather() {
 
        const cityData = datos.data[0].locality;
 
+       console.log(cityData)
       return cityData;
 }
 
