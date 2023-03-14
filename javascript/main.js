@@ -42,7 +42,7 @@ async function displayAllWeather() {
     
     try {
 
-    const { cityData } = await getCity();
+    const cityData = await getCity();
     displayCityNameSetup(cityData);
     console.log(cityData)
 
@@ -53,8 +53,8 @@ async function displayAllWeather() {
     
     } catch (error) {
         console.log(error);
-    }
-}
+    };
+};
 
 displayAllWeather();
 
